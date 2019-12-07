@@ -27,12 +27,27 @@
         <!-- Main text row: displays questions for user to answer -->
         <div class="row">
             <div class="col-sm-12">
-                <h1 id="question"></h1>
+                <h1 id="question">Coding Quiz Challenge!</h1>
             </div>
+        </div>
+        
+        <!-- Quiz Description -->
+        <div class="row">
+            <p id="choices">
+                This coding quiz is timed and will test your knowledge in web development
+                terms and the programming languages HTML, CSS, and JavaScript.
+                Score is calculated by time remaining. Answering quickly and correctly 
+                results in a higher score. Answering incorrectly results in a time penalty
+                of 15 seconds for every incorrect question. Are you ready to test your skills?
+            </p>
+        </div>
+        <!-- Start button -->
+        <div class="row">
+            <button id="start" type="button" class="btn btn-primary">Start</button>
         </div>
 
         <!-- Choices row: displays choices with one of them being correct -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-12">
                 <ol id="choices">
                     <li id="1"></li>
@@ -41,7 +56,7 @@
                     <li id="4"></li>
                 </ol>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- Link to JS -->
     <script src="script.js"></script>
