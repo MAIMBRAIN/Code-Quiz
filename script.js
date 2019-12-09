@@ -6,7 +6,6 @@
 //  the highscore board with their initials : and their final score. Allow the user to clear the data
 //  on the highscore board and let them return to the main menu.
 
-
 var questions = [{
         title: "Commonly used data types DO NOT include:",
         choices: ["strings", "booleans", "alerts", "numbers"],
@@ -19,36 +18,56 @@ var questions = [{
     },
     ///etc.
 ];
-var timeLeft = questions.length * 30;
 
-
-function setTime() {
-    var timerInterval = setInterval(function () {
-        timeLeft--;
-
-        if (timeLeft === 0) {
-            clearInterval(timerInterval);
-        }
-    }, 1000);
-}
+var timeLeft = questions.length * 15;
 
 function startQuiz() 
 {
-    // The inspector will say you have started the quiz then run the following code
-    console.log("you have started the quiz");
-
     // when the start button is clicked it will remove the start button
     $("#start").remove();
-    
-    // Then replace the title with questions
+    console.log("you have started the quiz");
+    // The inspector will say you have started the quiz then run the following code
+
+    // Timer
+        var timerInterval = setTimeout(function () 
+        {
+            timeLeft--;
+            $("#timer").html("Time: " + timeLeft);
+
+            if (timeLeft === 0) 
+            {
+                clearTimeout(timerInterval);
+            }
+        }, 1000);
     
 
-    // Then replace the directions with answer choices
-
     
-    // when the start button is clicked it will 
-    // when the start button is clicked it will 
-    // the questions will be pulled from an object with an array of items
+    
 
+
+    // The quiz will use the index of each item inside the questions object to 
+    // display each question with their respective choices
+
+    console.log(Object.keys(questions[0]));
+    console.log(questions[0]);
+    console.log(Object.values(questions[0]));
+    console.log(questions[0]["choices"][0]);
+    console.log(timeLeft);
+
+
+    // Replace the title with question
+    for (var i = 0; i < questions.length; i++)
+    {
+        $("#question").html(Object.values(questions[i]["title"]));
+
+        // Replace the directions with answer choices
+        for (var j = 0; j < questions[j]["choices"].length; j++)
+        {
+            // Each choice will create a new button
+            var btn1 = document.createElement("button");
+            var btn2 = document.createElement("button");
+            var btn3 = document.createElement("button");
+            var btn4 = document.createElement("button");
+        }
+    }   
 }
-
