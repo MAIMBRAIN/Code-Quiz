@@ -20,7 +20,26 @@ var questions = [{
 ];
 
 var timeLeft = questions.length * 15;
+var currentQuestion = 0;
+var questionChoices = questions[currentQuestion]["choices"];
+var questionTitle = questions[currentQuestion]["title"];
 
+// Function for displaying the current question
+
+function displayCurrentQuestion ()
+{
+    // Target the id: question to replace the text with the current question
+    $("#question").text(Object.values(questionTitle));
+
+    // Clear the description from the id: choices div
+    $("#description").remove();
+
+    // Create a new button for each choice in the current question
+    for (var i = 0; i < questionChoices.length; i++)
+    {
+        $("<button>" + questionChoices[i] + "</button>").appendTo($("#choices"));
+    }
+}
 function startQuiz() 
 {
     // when the start button is clicked it will remove the start button
@@ -39,10 +58,6 @@ function startQuiz()
                 clearTimeout(timerInterval);
             }
         }, 1000);
-    
-
-    
-    
 
 
     // The quiz will use the index of each item inside the questions object to 
@@ -54,20 +69,6 @@ function startQuiz()
     console.log(questions[0]["choices"][0]);
     console.log(timeLeft);
 
-
-    // Replace the title with question
-    for (var i = 0; i < questions.length; i++)
-    {
-        $("#question").html(Object.values(questions[i]["title"]));
-
-        // Replace the directions with answer choices
-        for (var j = 0; j < questions[j]["choices"].length; j++)
-        {
-            // Each choice will create a new button
-            var btn1 = document.createElement("button");
-            var btn2 = document.createElement("button");
-            var btn3 = document.createElement("button");
-            var btn4 = document.createElement("button");
-        }
-    }   
+    displayCurrentQuestion();
+     
 }
