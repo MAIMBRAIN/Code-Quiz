@@ -29,7 +29,7 @@ var questionTitle = questions[currentQuestion]["title"];
 function displayCurrentQuestion ()
 {
     // Target the id: question to replace the text with the current question
-    $("#question").text(Object.values(questionTitle));
+    $("#question").html(Object.values(questionTitle));
 
     // Clear the description from the id: choices div
     $("#description").remove();
@@ -37,7 +37,7 @@ function displayCurrentQuestion ()
     // Create a new button for each choice in the current question
     for (var i = 0; i < questionChoices.length; i++)
     {
-        $("<button>" + questionChoices[i] + "</button>").appendTo($("#choices"));
+        $("<button>" + questionChoices[i] + "</button>").attr({id: i, class: "m-2"}).appendTo($("#choices"));
     }
 }
 function startQuiz() 
