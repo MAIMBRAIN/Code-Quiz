@@ -30,7 +30,8 @@ var questionAnswer = questions[currentQuestion]["answer"];
 function displayCurrentQuestion ()
 {
     // Target the id: question to replace the text with the current question
-    $("#question").text(questionTitle.toString());
+    $("#question").html(Object.values(questionTitle));
+
 
     // Clear the description from the id: choices div
     $("#description").remove();
@@ -44,7 +45,9 @@ function displayCurrentQuestion ()
     // Create a new button for each choice in the current question
     for (var i = 0; i < questionChoices.length; i++)
     {
-        $("<li><button class='choiceBtn' data-label='" + questionChoices[i] + "'>" + questionChoices[i] + "</button></li>").appendTo($(list));
+
+        $("<button>" + questionChoices[i] + "</button>").attr({id: i, class: "m-2"}).appendTo($("#choices"));
+
     }
 
     // Listen for button click then check if button value is the same as the question answer

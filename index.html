@@ -19,19 +19,23 @@
             <div class="col-sm-6">
                 <a id="highscore" href="highscores.html">View Highscores</a>
             </div>
-            <div class="col-sm-6">
-                <p id="timer" class="float-right"></p>
+            <div class="col-sm-6 float-right">
+                <p id="timer">Text</p>
             </div>
         </div>
 
         <!-- Main text row: displays questions for user to answer -->
         <div class="row">
+            <div class="col-sm-6 text-align-center m-auto">
+                <h1 id="question">Coding Quiz Challenge!</h1>
             <div class="col-sm-12">
                 <h1 id="question" class="text-center">Coding Quiz Challenge!</h1>
             </div>
         </div>
         
         <!-- Quiz Description -->
+        <div class="row" id="choices">
+
         <div class="row" id="userRes">
             <p id="description">
                 This coding quiz is timed and will test your knowledge in web development
@@ -46,10 +50,21 @@
             <button id="start" type="button" class="btn btn-primary" onclick="startQuiz()">Start</button>
         </div>
 
+        <!-- Choices row: displays choices with one of them being correct -->
+        <!-- <div class="row">
+            <div class="col-sm-12">
+                <ol id="choices">
+                    <li id="1"></li>
+                    <li id="2"></li>
+                    <li id="3"></li>
+                    <li id="4"></li>
+                </ol>
+            </div>
+        </div> -->
+
         <!-- Answer Feedback -->
         <div id="feedback"></div>
-
-
+          
     </div>
     <!-- Link to JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
